@@ -1,0 +1,42 @@
+﻿@model List<BookDetails>
+@{
+    ViewData["Title"] = "All Books";
+    Layout = "Admin_Layout";
+
+}
+
+<div class="">
+    <h1 class="display-4 text-center">ALL Books</h1>
+    <form asp-action="RedirectToBook" method="post" class="form-inline mb-3">
+        <div class="form-check-inline">
+            <input type="number" name="bookId" class="form-control mr-2" placeholder="Enter Book ID" required />
+        </div>
+        <button type="submit" class="btn btn-primary">View Book</button>
+            @if (TempData["Error"] != null)
+            {
+                <p class="text-danger">@TempData["Error"]</p>
+            }
+    </form>
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr> 
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var book in Model)
+            {
+            <tr>
+                <td>@book.Id</td>
+                <td>@book.Title</td>
+                <td>@book.Description</td>
+                <td>@book.Author</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

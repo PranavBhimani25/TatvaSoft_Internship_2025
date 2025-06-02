@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Books_Api.Entities\Books_Api.Entities.csproj" />
+    <ProjectReference Include="..\Book_Api.Data\Books_Api.Data.csproj" />
+  </ItemGroup>
+
+</Project>

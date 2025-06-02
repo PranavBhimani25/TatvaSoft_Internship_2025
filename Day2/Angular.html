@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS Form</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="FormController"> 
+
+  <h2>Form</h2>
+
+  <form ng-submit="submitForm()">
+    <label>Name:</label>
+    <input type="text" ng-model="user.name" required><br><br>
+
+    <label>Email ID:</label>
+    <input type="email" ng-model="user.email" required><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('FormController', function($scope) {
+      $scope.user = {
+        name: '',
+        email: ''
+      };
+
+      $scope.submitForm = function() {
+        console.log("Name:", $scope.user.name);
+        console.log("Email ID:", $scope.user.email);
+      };
+    });
+  </script>
+
+</body>
+</html>

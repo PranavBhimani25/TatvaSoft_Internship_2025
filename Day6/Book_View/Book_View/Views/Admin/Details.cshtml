@@ -1,0 +1,11 @@
+﻿@model Book_View.Models.BookDetails
+
+<h2>Book Details</h2>
+
+<div>
+    <h4>@Model.Title</h4>
+    <p><strong>Description:</strong> @Model.Description</p>
+    <p><strong>Author:</strong> @Model.Author</p>
+</div>
+
+<a href="/Admin/GetBook" class="btn btn-secondary">Back to Book List</a>
