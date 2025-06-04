@@ -1,0 +1,48 @@
+﻿@using User.Entities.Entities;
+@model List<UserDetails>;
+@{
+    ViewData["Title"] = "All User";
+}
+
+<div class="">
+    <h1 class="display-4 text-center">All User</h1>
+    <form asp-action="RedirectToUser" method="post" class="form-inline mb-3">
+        <div class="form-check-inline">
+            <input type="number" name="bookId" class="form-control mr-2" placeholder="Enter User ID" />
+        </div>
+        <button type="submit" class="btn btn-primary">View User</button>
+        @if (TempData["Error"] != null)
+        {
+            <p class="text-danger">@TempData["Error"]</p>
+        }
+        <div class="float-end">
+            <button class="btn btn-primary" asp-controller="Admin" asp-action="AddBook">ADD New User</button>
+        </div>
+    </form>
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name </th>
+                <th>Role</th>
+                <th>Phone Number</th>
+                <th>Created Date</th>
+                @* <th>phoneNumber</th> *@
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.Name</td>
+                    <td>@book.Role</td>
+                    <td>@book.PhoneNumber</td>
+                    <td>@book.CreatedDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
