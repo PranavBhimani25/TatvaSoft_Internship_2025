@@ -1,0 +1,25 @@
+﻿.sidebar {
+    min-width: 220px;
+    height: 100vh;
+}
+
+    .sidebar .nav-link {
+        color: white;
+        font-size: 16px;
+    }
+
+        .sidebar .nav-link.active,
+        .sidebar .nav-link:hover {
+            background-color: #fff;
+            color: orange !important;
+            border-radius: 4px;
+        }
+
+main {
+    background-color: #f8f9fa;
+    width: 100%;
+}
+
+.bg-cust {
+    background-color: rgb(255 92 7 / 82%) !important;
+}

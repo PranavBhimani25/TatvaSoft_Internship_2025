@@ -1,0 +1,72 @@
+﻿@using User.Entities.Entities;
+@model List<MissionTheme>;
+
+
+@{
+    Layout = "Admin_Layout";
+    ViewData["Title"] = "Mission Theme";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h4>Mission Theme</h4>
+        <div class="text-muted">@DateTime.Now.ToString("dddd MMMM dd, yyyy, h:mm:ss tt")</div>
+    </div>
+    @* <button class="btn btn-outline-warning"><i class="fas fa-plus"></i> Add</button> *@
+</div>
+
+@* <div class="mb-3">
+    <input type="text" class="form-control w-50" placeholder="Search">
+</div> *@
+
+<form asp-action="RedirectToUser" method="post" class="form-inline mb-3">
+    <div class="form-check-inline">
+        <input type="number" name="bookId" class="form-control mr-2" placeholder="Enter Mission Theme ID" />
+    </div>
+    <button type="submit" class="btn btn-outline-warning">View Mission Theme</button>
+    @if (TempData["Error"] != null)
+    {
+        <p class="text-danger">@TempData["Error"]</p>
+    }
+    <div class="float-end">
+        <button class="btn btn-outline-warning" asp-controller="Admin" asp-action="AddBook">ADD New Mission Theme</button>
+    </div>
+</form>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-light">
+        <tr>
+        <tr>
+            <th>ID</th>
+            <th>Skill Name</th>
+            <th>Status</th>
+        </tr>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var skill in Model)
+        {
+            <tr>
+                <td>@skill.Id</td>
+                <td>@skill.ThemeName</td>
+                <td>@skill.Status</td>
+            </tr>
+        }
+        </tr>
+    </tbody>
+</table>
+
+<!-- Pagination -->
+<nav>
+    <ul class="pagination">
+        <li class="page-item disabled">
+            <span class="page-link">«</span>
+        </li>
+        <li class="page-item active">
+            <span class="page-link">1</span>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">»</a>
+        </li>
+    </ul>
+</nav>

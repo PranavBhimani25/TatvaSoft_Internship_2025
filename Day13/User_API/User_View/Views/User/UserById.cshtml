@@ -1,0 +1,12 @@
+﻿@model User.Entities.Entities.UserDetails;
+
+<h2>Book Details</h2>
+
+<div>
+    <h4>@Model.Name</h4>
+    <p><strong>User Type:</strong> @Model.Role</p>
+    <p><strong>Phone Number:</strong> @Model.PhoneNumber</p>
+    <p><strong>Created Date:</strong> @Model.CreatedDate</p>
+</div>
+
+<a href="/Admin/GetBook" class="btn btn-secondary">Back to Book List</a>
